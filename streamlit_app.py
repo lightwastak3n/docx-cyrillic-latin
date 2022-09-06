@@ -1,0 +1,31 @@
+import os
+import streamlit as st
+
+from converter import convert_doc
+
+
+def delete_edit():
+    os.remove('converted.docx')
+
+
+st.title(".docx Latin <-> Cyrillic (Serbian) converter")
+st.write("This is a transliterator that can convert between Latin and Cyrillic scripts of Serbian language.")
+uploaded_file = st.file_uploader(label="Upload .docx file")
+
+choice = st.radio(
+    "Choose direction of transliteration: ",
+    ('Latin -> Cyrillic', 'Cyrillic -> Latin'))
+
+
+if choice == 'Latin -> Cyrillic':
+    direction = 'lc'
+else:
+    direction = 'cl'
+
+if uploaded_file is not None:
+    convert_doc(uploaded_file, direction)
+
+if os.path.exists('converted.docx'):
+    with open('converted.docx', 'rb') as f:
+        st.download_button(label="Download converted file", data=f, file_name="edited.docx")
+        delete_edit()
