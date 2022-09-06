@@ -10,5 +10,5 @@ https://tinyurl.com/docxlatincyrillic
 If you want to run it locally
 - You need python docx package `pip install python-docx`
 - Import `converter.py` and use `convert_docx()` function.
-- To convert file called example.docx from Latin to Cyrillic run `convert_docx("example.docx", "lc").
-- To convert from Cyrillic to Latin just type anything else (for example `convert_docx("example.docx", "cl")
+- To convert file called example.docx from Latin to Cyrillic run `convert_docx("example.docx", "lc")`.
+- To convert from Cyrillic to Latin just type anything else (for example `convert_docx("example.docx", "cl")`
