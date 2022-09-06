@@ -10,6 +10,7 @@ def delete_edit():
 
 st.title(".docx Latin <-> Cyrillic (Serbian) converter")
 st.write("This is a transliterator that can convert between Latin and Cyrillic scripts of Serbian language.")
+st.write("It doesn't convert the text that is inside tables.")
 uploaded_file = st.file_uploader(label="Upload .docx file")
 
 choice = st.radio(
