@@ -45,7 +45,7 @@ def cyrillic_to_latin(text):
     return new_text
 
 
-def convert_doc(file, conversion):
+def convert_docx(file, conversion):
     convertor = latin_to_cyrillic if conversion == "lc" else cyrillic_to_latin
     document = Document(file)
     for paragraph in document.paragraphs:
