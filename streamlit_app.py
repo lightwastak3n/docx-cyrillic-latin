@@ -1,7 +1,7 @@
 import os
 import streamlit as st
 
-from converter import convert_doc
+from converter import convert_docx
 
 
 def delete_edit():
@@ -24,9 +24,9 @@ else:
     direction = 'cl'
 
 if uploaded_file is not None:
-    convert_doc(uploaded_file, direction)
+    convert_docx(uploaded_file, direction)
 
 if os.path.exists('converted.docx'):
     with open('converted.docx', 'rb') as f:
-        st.download_button(label="Download converted file", data=f, file_name="edited.docx")
+        st.download_button(label="Download converted file", data=f, file_name="converted.docx")
         delete_edit()
