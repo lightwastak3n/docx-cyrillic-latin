@@ -53,5 +53,12 @@ def convert_docx(file, conversion):
             for item in paragraph.runs:
                 if item.text != "":
                     item.text = convertor(item.text)
+    for table in document.tables:
+        for row in table.rows:
+            for cell in row.cells:
+                for paragraph in cell.paragraphs:
+                    if paragraph.runs:
+                        for item in paragraph.runs:
+                            if item.text != "":
+                                item.text = convertor(item.text)
     document.save("converted.docx")
-
